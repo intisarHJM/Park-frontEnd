@@ -1,16 +1,25 @@
-# React + Vite
+# 🌳 Central Landing Park | Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the frontend of **Central Landing Park**, a project developed during a park-themed Stackathon. This application provides a modern, interactive user interface for park visitors and administrators, built with React.
 
-Currently, two official plugins are available:
+## 🔗 Backend Repository
+To run this application with full data functionality, you must also have the backend server running:
+**[Park Backend API Repository](https://github.com/intisarHJM/Park-backEnd.git)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Project Overview
+The **Central Landing Park** frontend focuses on a seamless user experience, allowing users to visualize park layouts and interact with real-time data provided by our Express API.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Key Features
+* **Interactive Park View:** A visual representation of park rides.
+* **Seamless API Integration:** Uses Axios/Fetch to communicate with the Node/Express backend.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+* **Library:** React.js
+* **Routing:** React Router DOM
+* **State Management:** React Hooks (useState, useEffect)
+* **API Communication:** Axios
+* **Styling:** Custom CSS3 with **Flexbox** (Responsive Layouts)
