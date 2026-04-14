@@ -25,7 +25,7 @@ The **Central Landing Park** frontend focuses on a seamless user experience, all
 * **API Communication:** Axios
 * **Styling:** Custom CSS3 with **Flexbox** ---
 
-## 📂 Project Structure
+## 📂 Front-end Structure
 Based on the current source directory:
 
 ```text
