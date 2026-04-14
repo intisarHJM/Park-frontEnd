@@ -20,8 +20,9 @@ const RideCard = ({ name, imageURL, type, tickets }) => {
           </li>
         ))}
       </ul>
-      <button onClick={() => navigate("../pages/TicketForm.jsx")}>
-        Buy A Tickets
+      {/* /tickets ot /${ride.tickets} */}
+      <button onClick={() => navigate(`/rides/${ride._id}/${ride.tickets}`)}>
+        Buy Tickets
       </button>
     </div>
   )
