@@ -1,6 +1,6 @@
 # 🌳 Central Landing Park | Frontend
 
-Welcome to the frontend of **Central Landing Park**, a project developed during a park-themed Stackathon. This application provides a modern, interactive user interface for park visitors and administrators, built with React.
+Welcome to the frontend of **Central Landing Park**, a project developed during a park-themed Stackathon. This application provides a modern, interactive user interface for park visitors, built with React.
 
 ## 🔗 Backend Repository
 To run this application with full data functionality, you must also have the backend server running:
