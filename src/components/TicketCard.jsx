@@ -1,9 +1,12 @@
 import axios from "axios"
+// import { useNavigate } from "react-router-dom"
 
 const TicketCard = ({ tickets }) => {
+  // nav = useNavigate
   const handelDeletCard = async (ticketId) => {
     try {
-      await axios.delete(`http://localhost:3001/rides/${ticketId}`)
+      await axios.delete(`http://localhost:3001/${ticketId}`)
+      // nav("/rides")
     } catch (err) {
       console.error("Error deleting ticket:", err)
     }
@@ -19,6 +22,7 @@ const TicketCard = ({ tickets }) => {
               <p>Price: ${ticket.price}</p>
               <p>Ride ID: {ticket.rideId}</p>
               <p>Created Date:{ticket.date?.split("T")[0]}</p>
+
               <button
                 onClick={() => {
                   handelDeletCard(ticket._id)
