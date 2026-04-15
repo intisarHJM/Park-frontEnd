@@ -2,7 +2,6 @@ const TicketCard= ({ tickets }) => {
 
   return (
     <div className="tickets-section">
-      <h2>All Tickets</h2>
       <div className="tickets-list">
         {tickets.length > 0 ? (
           tickets.map((ticket) => (
