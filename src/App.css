@@ -84,6 +84,7 @@ h1:hover {
 
 .tickets-section {
   display: flex;
+  justify-content: center;
   align-items: end;
   flex-wrap: wrap;
 }
@@ -120,4 +121,15 @@ form input {
   color: #510b0c;
   background-color: pink;
   margin-top: 30px;
+}
+
+.rideDetails h2,
+h3 {
+  justify-self: center;
+}
+.ridePic {
+  display: flex;
+  justify-self: center;
+  width: 90%;
+  margin: 30px;
 }
