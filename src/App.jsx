@@ -9,13 +9,8 @@ import ViewRide from "./pages/ViewRide"
 import Button from "./components/Button"
 import RideCard from "./components/RideCard"
 
-
 function App() {
-
   //const [tickets, setTickets] = useState([])
-
-
-
 
   return (
     <>
@@ -23,9 +18,9 @@ function App() {
       <Button />
       <Routes>
         <Route path="/rides" element={<Home />} />
-         <Route path="/rides/:id" element={<ViewRide />}/>
-       <Route path="/rides/:rideId/tickets/new" element={<TicketForm />} />
-       <Route path="/:id" element={<TicketCard />} />
+        <Route path="/rides/:id" element={<ViewRide />} />
+        <Route path="/rides/:rideId/tickets/new" element={<TicketForm />} />
+        <Route path="/:id" element={<TicketCard />} />
       </Routes>
     </>
   )
