@@ -10,7 +10,6 @@ import btn from "./components/btn.jsx"
 
 function App() {
 
-  const [tickets, setTickets] = useState([])
   return (
     <>
       <h1 id="main-title">Central Landing Park</h1>
