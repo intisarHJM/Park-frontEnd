@@ -50,8 +50,8 @@ const TicketForm = () => {
     <div className="rides-container">
       <h2>Rides and Their Tickets</h2>
       <form onSubmit={handleSubmit}>
-                <label htmlFor="num">Ticket Number:</label>
-                
+        <label htmlFor="num">Ticket Number:</label>
+
         <input
           type="text"
           name="num"
@@ -71,7 +71,6 @@ const TicketForm = () => {
         <label htmlFor="rideId">Select Ride:</label>
 
         <select name="rideId" onChange={handleChange} value={formState.rideId}>
-
           <option value="" disabled>
             Select a Ride
           </option>
@@ -79,10 +78,8 @@ const TicketForm = () => {
           {rides.map((ride) => (
             <option key={ride._id} value={ride._id}>
               {ride.name}
-
             </option>
           ))}
-
         </select>
         <label htmlFor="date">Created Date:</label>
 
@@ -93,8 +90,8 @@ const TicketForm = () => {
           value={formState.date}
         />
         <button type="submit">Buy the Ticket</button>
-
       </form>
+      <h2>All Tickets</h2>
 
       {rides.map((ride) => (
         <div key={ride._id} className="ride-section">
