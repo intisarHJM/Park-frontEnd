@@ -22,7 +22,7 @@ const RideCard = ({ name, imageURL, type, tickets }) => {
       </ul>
       {/* /tickets ot /${ride.tickets} */}
       <button onClick={() => navigate(`/rides/${ride._id}/${ride.tickets}`)}>
-        Buy Tickets
+        view details
       </button>
     </div>
   )
