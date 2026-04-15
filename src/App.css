@@ -71,3 +71,53 @@ h1:hover {
   transform: translateY(5px);
   text-shadow: 0 5px 15px rgba(255, 233, 37, 0.925); /*a soft shadow*/
 }
+
+.main-btn button {
+  background-color: #f5c5e2;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-radius: 8px;
+  width: 90%;
+
+  color: rgb(11, 104, 109);
+  margin: 20px;
+}
+
+.tickets-section {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.tickets-list {
+  margin-top: 40px;
+  width: 500px;
+}
+
+.ticket-card {
+  background-color: pink;
+  margin: 40px;
+  border: 5px solid rgb(11, 104, 109);
+  border-radius: 2%;
+  padding: 3%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+form input {
+  width: 400px;
+}
+
+.ride-header {
+  display: flex;
+  justify-content: center;
+  color: #510b0c;
+  background-color: pink;
+  margin-top: 30px;
+}
