@@ -1,25 +1,22 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react"
+import axios from "axios"
+import { useNavigate } from "react-router-dom" // Use navigate instead of Link for forms
+import TicketCard from "../components/TicketCard" // Import your component
 
-const TicketForm = ({ tickets, setTickets }) => {
-  const initialState = {
-    num: '',
-    price: '',
-    rideId: '',
-    date: ''
-  }
-
+const TicketForm = () => {
+  const navigate = useNavigate()
+  const initialState = { num: "", price: "", rideId: "", date: "" }
   const [formState, setFormState] = useState(initialState)
   const [rides, setRides] = useState([])
-
+  const [tickets, setTickets] = useState([])
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const ridesRes = await axios.get('http://localhost:3001/rides')
+        const ridesRes = await axios.get("http://localhost:3001/rides")
         setRides(ridesRes.data.data)
 
-        const ticketsRes = await axios.get('http://localhost:3001/tickets')
+        const ticketsRes = await axios.get("http://localhost:3001/tickets")
         setTickets(ticketsRes.data.data)
       } catch (err) {
         console.error("Error data:", err)
@@ -39,22 +36,22 @@ const TicketForm = ({ tickets, setTickets }) => {
         `http://localhost:3001/rides/${formState.rideId}/tickets/new`,
         formState
       )
-
-
-      let ticketList = [...tickets]
-      ticketList.push(response.data.data)
-      setTickets(ticketList)
+      setTickets([...tickets, response.data.data])
       setFormState(initialState)
+
+      // Optional: Navigate to the tickets list after creation
+      // navigate('/tickets')
     } catch (err) {
       console.error("Error creating ticket:", err)
     }
   }
 
   return (
-    <div className="form-container">
-      <h2>Create New Ticket</h2>
+    <div className="rides-container">
+      <h2>Rides and Their Tickets</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="num">Ticket Number:</label>
+                <label htmlFor="num">Ticket Number:</label>
+                
         <input
           type="text"
           name="num"
@@ -62,8 +59,8 @@ const TicketForm = ({ tickets, setTickets }) => {
           value={formState.num}
           autoComplete="off"
         />
-
         <label htmlFor="price">Price:</label>
+
         <input
           type="number"
           name="price"
@@ -71,31 +68,47 @@ const TicketForm = ({ tickets, setTickets }) => {
           value={formState.price}
           autoComplete="off"
         />
-
         <label htmlFor="rideId">Select Ride:</label>
-        <select
-          name="rideId"
-          onChange={handleChange}
-          value={formState.rideId}
-        >
-          <option value="" disabled>Select a Ride</option>
+
+        <select name="rideId" onChange={handleChange} value={formState.rideId}>
+
+          <option value="" disabled>
+            Select a Ride
+          </option>
+
           {rides.map((ride) => (
             <option key={ride._id} value={ride._id}>
               {ride.name}
+
             </option>
           ))}
-        </select>
 
+        </select>
         <label htmlFor="date">Created Date:</label>
+
         <input
           type="date"
           name="date"
           onChange={handleChange}
           value={formState.date}
         />
+        <button type="submit">Buy the Ticket</button>
 
-        <button type="submit">Create Ticket</button>
       </form>
+
+      {rides.map((ride) => (
+        <div key={ride._id} className="ride-section">
+          <header className="ride-header">
+            <h3>{ride.name}</h3>
+          </header>
+
+          <div>
+            <TicketCard tickets={tickets} />
+          </div>
+
+          <hr />
+        </div>
+      ))}
     </div>
   )
 }

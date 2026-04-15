@@ -4,22 +4,28 @@ import Home from "./pages/Home"
 import { useState } from "react"
 import TicketForm from "./pages/TicketForm"
 import TicketCard from "./components/TicketCard"
-// import ViewRide from "./pages/ViewRide"
+import ViewRide from "./pages/ViewRide"
 // import TicketForm from "./pages/TicketForm"
-import btn from "./components/btn.jsx"
+import Button from "./components/Button"
+import RideCard from "./components/RideCard"
+
 
 function App() {
+
+  //const [tickets, setTickets] = useState([])
+
+
+
+
   return (
     <>
       <h1 id="main-title">Central Landing Park</h1>
-      <br />
-      <btn />
+      <Button />
       <Routes>
-        {/* <Route path="/" element={<Btn />} /> */}
         <Route path="/rides" element={<Home />} />
-        {/* <Route path="/rides/:id" element={<ViewRide />} />
-      <Route path="/rides/:rideId/tickets/new" element={<TicketForm />} /> */}
-        {/* <Route path="/rides/:id" element={<ViewTicket />} /> */}
+         <Route path="/rides/:id" element={<ViewRide />}/>
+       <Route path="/rides/:rideId/tickets/new" element={<TicketForm />} />
+       <Route path="/:id" element={<TicketCard />} />
       </Routes>
     </>
   )
