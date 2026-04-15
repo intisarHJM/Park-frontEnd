@@ -21,6 +21,7 @@ function App() {
 
       <TicketCard tickets={tickets} />
       <Routes>
+        
         <Route path="/rides" element={<Home />} />
         {/* <Route path="/rides/:id" element={<ViewRide />} />
       <Route path="/rides/:rideId/tickets/new" element={<TicketForm />} /> */}
