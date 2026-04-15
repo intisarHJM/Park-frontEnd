@@ -1,8 +1,16 @@
-const TicketCard= ({ tickets }) => {
+import axios from "axios"
+
+const TicketCard = ({ tickets }) => {
+  const handelDeletCard = async (ticketId) => {
+    try {
+      await axios.delete(`http://localhost:3001/rides/${ticketId}`)
+    } catch (err) {
+      console.error("Error deleting ticket:", err)
+    }
+  }
 
   return (
     <div className="tickets-section">
-      <h2>All Tickets</h2>
       <div className="tickets-list">
         {tickets.length > 0 ? (
           tickets.map((ticket) => (
@@ -10,7 +18,14 @@ const TicketCard= ({ tickets }) => {
               <h3>Ticket #: {ticket.num}</h3>
               <p>Price: ${ticket.price}</p>
               <p>Ride ID: {ticket.rideId}</p>
-              <p>Created Date:{ticket.date?.split('T')[0]}</p>
+              <p>Created Date:{ticket.date?.split("T")[0]}</p>
+              <button
+                onClick={() => {
+                  handelDeletCard(ticket._id)
+                }}
+              >
+                delete
+              </button>
             </div>
           ))
         ) : (
